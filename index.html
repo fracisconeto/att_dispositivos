@@ -2,7 +2,7 @@
     <!DOCTYPE html>
     <html lang="pt-br">
     <head>
-        <title>Curso 3info3</title>
+        <title>Ben 10</title>
         <!--VUE CDN-->
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <!--STYLE-->
@@ -10,66 +10,61 @@
         <link rel="stylesheet" href="assets/java">
     </head>
     <body>
-      <div id="app">
-        <div class="cart">Cart:{{ cart }}</div>
-      <div class=”product-display”>
-         <div class=”product-container”>
-           <div class=”product-info”></div>
-           <h1>{{ product_title }}</h1>
-           <div class=”product-image”>
-            <img :src="image" alt="img-product"> 
-          </div>
-           <p v-if="inStock >10">In Stock</p>
-           <p v-else-if="inStock <10 && inStock > 1">Almost sold out</p>
-            <p v-else>Out of Stock</p>
-            <ul>
-              <li v-for="detail in details">
-                {{ detail }}
-              </li>
-            </ul>
-            <div v-for="variant in variants"
-            :key="variant.id" 
-            @mouseover="changeImage(variant.image)">
-              {{ variant.color }}</p>
-              <button class="button" @click="addToCart">add to cart</button>
-            </div>
-          </div>
-         
-         </div>
-      </div>
-      </div>
+      <nav>
+        <div class="logo-nav">
+          <a href="index.html"><img src="assets/img/logo1.png" alt="Ben 10 Logo"></a>
+        </div>
+      
+        <div class="link-nav">
+          <a href="classico.html">Clássico</a>
+          <a href="supremacia.html">Supremacia</a>
+          <a href="omniverse.html">Omniverse</a>
+        </div>
+      </nav>
+      <section class="series-ben10">
+        <h2>As Séries de Ben 10</h2>
 
-        <script>
-          const { createApp, ref } = Vue
-          createApp({
-            setup() {
-              const cart = ref(0);
-              const addToCart = () => {
-                cart.value += 1;
-              }
-               
-        const image = ref('./assets/img/enormosauro.png');
-        const changeImage = (variantImage) => {
-          image.value = variantImage;
-        }
-              return {
-              product_title: ref('T-shirt'),
-              image,
-              inStock: ref(15),
-              details: ref(['50% cotton', '30% polyester', '20% wool ']),
-              variants: [{id:1, color: 'blue'}, {id:2, color: 'green'}],
-              cart: ref(0),
-              variants: 
-              [{id:1, color: 'blue', image: './assets/img/enormosauro.png'},
-              {id:2, color: 'green', image: './assets/img/ben10.png'}],
-              cart,
-              addToCart,
-              changeImage
-              }
-            }
-          }).mount('#app')
-        </script>
-     </script>
+        <div class="serie">
+          <h3><a href="classico.html">Ben 10: Clássico</a></h3>
+          <p>
+            É aqui que tudo começa. Ben Tennyson, aos 10 anos, encontra o
+            Omnitrix e descobre que pode se transformar em 10 heróis alienígenas
+            diferentes. Junto de sua prima Gwen e do avô Max, ele viaja pelos
+            EUA enfrentando vilões e aprendendo a usar seu poder com
+            responsabilidade. Uma mistura de humor, ação e descobertas, essa
+            fase é nostálgica e querida por todos os fãs.
+          </p>
+        </div>
+
+        <div class="serie">
+          <h3><a href="supremacia.html">Ben 10: Supremacia Alienígena</a></h3>
+          <p>
+            Agora com 15 anos, Ben volta a usar o Omnitrix, que evolui para o
+            Ultimatrix — permitindo não só transformações, mas também versões
+            "supremas" de seus aliens. A trama fica mais sombria, os vilões mais
+            perigosos, e Ben precisa lidar com escolhas mais sérias,
+            amadurecendo como herói e como pessoa. Uma fase com mais drama,
+            tecnologia e ação intensa.
+          </p>
+        </div>
+
+        <div class="serie">
+          <h3><a href="omniverse.html">Ben 10: Omniverse</a></h3>
+          <p>
+            Omniverse traz um novo visual e uma abordagem diferente, alternando
+            entre o Ben adolescente e o mais jovem. Com novos parceiros, como
+            Rook Blonko, e muitos aliens inéditos, essa fase explora mais fundo
+            o universo do Omnitrix, com muitos mistérios, viagens
+            interdimensionais e confrontos épicos. Ideal pra quem quer mergulhar
+            fundo no universo expandido da franquia.
+          </p>
+        </div>
+      </section>
+      
+      
+    
+
+     
     </body>
     </html>
 </html>
